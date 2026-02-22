@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+            
+            
+        }
+        .blogs_cover{
+            /* background-color: black; */
+            padding: 50px; 
+            /* border: solid 2px green; */
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: space-between; 
+            gap: 20px;
+            
+            /* 
+            border: solid 3px; 
+            margin: auto; 
+             */
+
+            }
+            .blogs_container{
+                box-shadow: 10px 10px rgba(128, 128, 128, 0.521);
+                
+            border: solid 1px gray;
+            width: 30%;
+            /* height: 50vh; */
+            /* color: white; */
+    
+            /* background-color: white; */
+            
+
+        }
+
+
+        .container_cont{
+            margin-left: 5px;
+        }
+        .main_margin{
+            /* margin-top: 10vh; */
+            /* background-color: grey; */
+            
+        }
+    </style>
+
+</head>
+<body style="position: relative;">
+    {% include './topbar.html' %}
+
+    <main class="main main_margin" style="margin-top: 10vh;" >
+        <div class="blogs_cover">
+            {% for eachBlog in allblog %}
+            <div class="blogs_container"  >
+                <!-- <p>{{eachBlog.img}}</p> -->
+
+                <img width="100%" src="{{ eachBlog.img }}" alt="" srcset="">
+                <div class="container_cont" >
+                    <p style="font-size: 12px; font-weight: bold;" >{{ eachBlog.title }}</p>
+
+                    <p style=" margin: 10px 0; "> {{ eachBlog.content }}</p>
+                        <hr/>
+                        <br>
+                        <div>
+                            <p>{{eachBlog.author}}</p>
+                            <a href="{% url 'ViewMorePageurl'  eachBlog.id %}"   style="border: solid 1px grey; padding:auto; display: flex;" >View More</a>
+
+
+                        </div>
+                        
+                </div>
+            </div>
+            {% endfor %}
+
+           
+
+        </div>
+
+    </main>
+
+
+    
+</body>
+</html>

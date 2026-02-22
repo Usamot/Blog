@@ -1,0 +1,58 @@
+
+<style>
+    *{
+        list-style-type: none;
+        text-decoration: none;
+        
+    }
+    .nav{
+       height: 8vh; 
+       
+    }
+
+.nav li{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(250, 245, 245);
+    cursor: pointer;
+    color: black !important;
+    background: rgba(245, 12, 12, 0.76);
+    border-radius: 10px;
+
+    
+    
+    
+
+}
+
+.nav li :hover{
+    color: rgb(5, 5, 5);
+    cursor: pointer;
+    
+    
+
+    
+
+
+
+}
+
+
+
+
+</style>
+
+<header class="header" style=" display: flex; justify-content: space-between; color: rgba(245, 12, 12, 0.76);  background-color: white; margin-bottom: 10px; padding: 20px 50px; border-bottom: 1px solid black; ">
+    <div class="logo" style="" > <h1>Blog</h1> </div>
+    <div class="nav" style="" >
+        <ul style="display: flex; gap: 10px; list-style-type: none; ">
+            
+            <li><a href="{% url 'HomePageurl' %}">Home</a></li>
+            
+        
+            
+            
+        </ul>
+    </div>
+</header>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          list-style-type: none;
+        }
+        .div-form{
+            width: 100%;
+            /* border: 5px solid red; */
+            text-align: center;
+
+
+        }
+        .allform{
+            /* border: 3px solid red; */
+            width: 40%;
+            margin-left: 30%;
+            align-items: center;
+            text-align: center;
+            
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffff;
+            padding: 40px;
+            
+        }
+
+        div input{
+            margin-bottom: 10px;
+            padding: 12px;
+            width: 13cm;
+        }
+        .submit-btn{
+            background: rgba(245, 12, 12, 0.76);
+            border: none;
+            font-size: larger;
+            cursor: progress;}
+       
+      </style>
+
+</head>
+<body>
+    {% include './header.html' %}
+
+
+<!--     
+    <form action="" method="post">
+        {{myform }}
+        {% csrf_token %}
+        <input type="submit" value="submit form">
+    </form> -->
+
+    
+
+<!-- <div class="div-form">
+    <form class="allform" action="" method="post">
+        <h1>EDIT Blog PAGE</h1>
+        {% csrf_token %}
+        <div>
+    <label for="id_img">Img:</label>
+
+
+
+<input type="text" name="img" value="" maxlength="1000" required="" id="id_img">
+    
+</div>
+
+  <div>
+    <label for="id_title">Title:</label>
+
+
+
+<input type="text" name="title" value={{form.title}}  maxlength="1000" required="" id="id_title">
+    
+</div>
+
+  <div>
+    <label for="id_content">Content:</label>
+
+
+
+<input type="text" name="content" value="" maxlength="2000" required="" id="id_content">
+    
+</div>
+
+  <div>
+    <label for="id_author">Author:</label>
+
+
+
+<input type="text" name="author" value="" maxlength="200" required="" id="id_author">
+    
+      
+    
+</div>
+        <input type="hidden" name="csrfmiddlewaretoken" value="zd9M97iObyC7ZwtpUVpBzodzIQXRYrxQmyOyINfD0yDEOm0Y7Xfzwrrfw8bS5aCB">
+        <input class="submit-btn" type="submit" value="submit form">
+    </form>
+</body>
+
+</div>
+   
+</body>
+</html> -->
+
+<div class="div-form">
+    <form class="allform" method="post">
+        <h1>EDIT Blog PAGE</h1>
+        {% csrf_token %}
+
+        <div>
+            <label for="{{ myform.img.id_for_label }}">Img:</label>
+            {{ myform.img }}
+        </div>
+
+        <div>
+            <label for="{{ myform.title.id_for_label }}">Title:</label>
+            {{ myform.title }}
+        </div>
+
+        <div>
+            <label for="{{ myform.content.id_for_label }}">Content:</label>
+            {{ myform.content }}
+        </div>
+
+        <div>
+            <label for="{{ myform.author.id_for_label }}">Author:</label>
+            {{ myform.author }}
+        </div>
+
+        <input class="submit-btn" type="submit" value="Submit Form">
+    </form>
+</div>
